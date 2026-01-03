@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <title>Portfolio: Tathagat Gupta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="dark:bg-[#101f2a] bg-white transition-colors duration-500">
+    <div class="bg-[url('./src/assets/images/Photo.jpeg')] bg-cover bg-bottom w-full h-130 shadow-md shadow-white/30 flex items-center" >
+      <div class="text-yellow-300 font-extrabold p-10 text-5xl md:text-6xl lg:text-7xl font-shadows font-['Shadows_Into_Light']">Hey there! I'm Tathagat Gupta.</div>
+    </div>  
+
+    <div class="flex flex-col items-center justify-center font-['EB_Garamond'] dark:text-white text-[#101f2a] transition-colors duration-500 text-center">
+      <div class=" text-1xl md:text-3xl lg:text-3xl p-10 " >Student at IIT Roorkee | Game Dev & Blockchain Enthusiast</div>
+      <div class="text-xl md:text-1xl lg:text-2xl w-1/2" >I am a developer driven by the intersection of immersive experiences and decentralized systems. Currently pursuing my studies at IIT Roorkee, I spend my time building worlds in game engines and exploring the future of Web3. When I'm not debugging code, you'll find me in the pool or at a table tennis board, chasing the perfect serve.<br></div>
+    </div> 
+
+    <button class="flex justify-evenly mx-auto mt-5 rounded-full px-5 py-2 bg-slate-200 text-black dark:bg-slate-700 dark:text-white hover:opacity-80 transition" id="theme-switch">
+      <i data-lucide="moon" id="moon" class="w-8 h-8"></i>
+      <i data-lucide="sun" id="sun" class="w-8 h-8"></i>
+      <h1 class="font-bold text-xl md:text-1xl lg:text-2xl font-['EB_Garamond']">Theme</h1>
+    </button>
+
+    <div class="flex justify-center mt-5 mb-20">
+      <div class="rounded-full flex justify-center mx-5 transition-colors w-15 bg-blue-600 h-15 opacity-60 hover:opacity-100 shadow-lg shadow-blue-300/30">
+        <a href="https://www.linkedin.com/in/tathagat-gupta-033300273/" class="flex items-center gap-2 text-white">
+          <i data-lucide="linkedin" class="w-8 h-8"></i>
+        </a>
+      </div>
+      <div class="bg-black rounded-full flex justify-center mx-5 transition-colors w-15 h-15 opacity-60 hover:opacity-100 shadow-lg shadow-amber-300/30">
+        <a href="https://github.com/TathagatGupta98" class="flex items-center gap-2 text-white">
+          <i data-lucide="github" class="w-8 h-8"></i>
+        </a>
+      </div>
+      <div class="rounded-full flex justify-center mx-5 transition-colors w-15 bg-blue-500 h-15 opacity-60 hover:opacity-100 shadow-lg shadow-blue-300/30">
+        <a href="https://x.com/TathagatGu20950" class="flex items-center gap-2 text-white">
+          <i data-lucide="twitter" class="w-8 h-8"></i>
+        </a>
+      </div> 
+    </div>
+    <hr class="border-gray-400 border-2 my-4">
+
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="text-center mt-10 mb-5 text-lg md:text-xl lg:text-2xl font-['Merriweather'] dark:text-white text-[#101f2a] transition-colors duration-500">My First Web3 App</h1>
+      <p class="text-center  mb-15 text-md md:text-lg lg:text-xl font-['Merriweather'] dark:text-white text-[#101f2a] w-1/2" id="wallet-address">
+        I have created a Simple Storage Contract. The contract takes a value and stores it in a variable, it can then retrieve the value with a function call.
+        First connect your wallet, then you can store a number in the contract and retrieve it later. If you did not store a number, it will retreive the last stored number.
+      </p>
+      <button class="block mx-auto mb-5 rounded-full px-5 py-3 bg-green-500 text-white hover:opacity-80 transition font-bold shadow-lg shadow-green-400/30" id="connect-wallet">
+        Connect Wallet
+      </button>
+      <div class="flex justify-stretch mb-10 gap-4 ">
+        <p class="text-center text-md md:text-lg lg:text-xl font-['Merriweather'] dark:text-white text-[#101f2a]">Store Your number:</p>
+        <input type="number" id="storage-input" class="bg-white border text-lg rounded-base w-full px-2.5 py-2 shadow-xs " placeholder="Enter a number to store">
+        <button id="store-button" class="bg-blue-500 text-white rounded-full px-4 py-2 hover:opacity-80 transition font-bold shadow-lg shadow-blue-400/30">Store</button>
+      </div>
+      <div class="flex justify-center items-center mb-10 gap-4">
+        <p class="flex-shrink-0 text-center text-md md:text-lg lg:text-xl font-['Merriweather'] dark:text-white text-[#101f2a]">Retrieve Stored Number: </p>
+        <button id="retrieve-button" class="bg-purple-400 text-white rounded-full px-4 py-2 hover:opacity-80 transition font-bold shadow-lg shadow-purple-400/30">Retrieve</button>
+        <div class="bg-white border text-lg rounded-base w-full px-2.5 py-2 shadow-xs" id="display">Stored Number</div>
+      </div>
+    </div>
+    <hr class="border-gray-400 border-2 my-4">
+
+    <script type="module" src="/src/main.js"></script>
+    <script>lucide.createIcons();</script>
+  </body>
+</html>
