@@ -20,10 +20,9 @@
       <i data-lucide="moon" id="moon" class="w-8 h-8"></i>
       <i data-lucide="sun" id="sun" class="w-8 h-8"></i>
       <h1 class="font-bold text-xl md:text-1xl lg:text-2xl font-['EB_Garamond']">Theme</h1>
-      
     </button>
 
-    <div class="flex justify-center mt-5">
+    <div class="flex justify-center mt-5 mb-5">
       <div class="rounded-full flex justify-center mx-5 transition-colors w-15 bg-blue-600 h-15 opacity-60 hover:opacity-100 shadow-lg shadow-blue-300/30">
         <a href="https://www.linkedin.com/in/tathagat-gupta-033300273/" class="flex items-center gap-2 text-white">
           <i data-lucide="linkedin" class="w-8 h-8"></i>
@@ -40,7 +39,17 @@
         </a>
       </div> 
     </div>
+    <hr class="border-gray-400 border-2 my-4">
 
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="text-center mt-10 mb-5 text-lg md:text-xl lg:text-2xl font-['Merriweather'] dark:text-white text-[#101f2a] transition-colors duration-500">My First Web3 App</h1>
+      <button class="block mx-auto rounded-full px-5 py-3 bg-green-500 text-white hover:opacity-80 transition font-bold shadow-lg shadow-green-400/30" id="connect-wallet">
+        Connect Wallet
+      </button>
+      <p class="text-center mt-5 mb-10 text-md md:text-lg lg:text-xl font-['Merriweather'] dark:text-white text-[#101f2a] transition-colors duration-500 w-1/2" id="wallet-address">
+        I have created a Simple Storage Contract. The contract takes a value and stores it in a variable, it can then retrieve the value with a function call.
+      </p>
+    </div>
     <script type="module" src="/src/main.js"></script>
     <script>lucide.createIcons();</script>
   </body>
