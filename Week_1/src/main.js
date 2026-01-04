@@ -1,6 +1,6 @@
 import './style.css';
 import { ethers } from "ethers";
-import ContractArtifact from '/home/tathagat/Forge-Build-Cohort-by-BlocSoc-IITR/out/SimpleStorage.sol/SimpleStorage.json';
+import ContractArtifact from "../../out/SimpleStorage.sol/SimpleStorage.json";
 
 const htmlTag = document.documentElement;
 const themeSwitchButton = document.getElementById('theme-switch');
@@ -11,6 +11,7 @@ const inputNumber = document.getElementById('storage-input');
 const storeButton = document.getElementById('store-button');
 const retrieveButton = document.getElementById('retrieve-button');
 const displayPlace = document.getElementById('display');
+const spinner = document.getElementById('spinner');
 
 sunIcon.style.display = 'none';
 
@@ -66,9 +67,12 @@ storeButton.addEventListener('click', async () => {
         return;
     }
     try{
+        spinner.classList.remove('hidden');
         const store = await contract.set(numberToStore);
         await store.wait();
-        alert(`Number ${numberToStore} stored successfully!`);
+        const txhash = store.hash;
+        alert(`Number ${numberToStore} stored. Transaction hash: ${txhash}`);
+        spinner.classList.add('hidden');
     }
     catch(error){
         console.error("Error storing number:", error);

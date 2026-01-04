@@ -43,10 +43,12 @@
 
     <div class="flex flex-col items-center justify-center">
       <h1 class="text-center mt-10 mb-5 text-lg md:text-xl lg:text-2xl font-['Merriweather'] dark:text-white text-[#101f2a] transition-colors duration-500">My First Web3 App</h1>
-      <p class="text-center  mb-15 text-md md:text-lg lg:text-xl font-['Merriweather'] dark:text-white text-[#101f2a] w-1/2" id="wallet-address">
+      <p class="text-center  mb-5 text-md md:text-lg lg:text-xl font-['Merriweather'] dark:text-white text-[#101f2a] w-1/2" id="wallet-address">
         I have created a Simple Storage Contract. The contract takes a value and stores it in a variable, it can then retrieve the value with a function call.
         First connect your wallet, then you can store a number in the contract and retrieve it later. If you did not store a number, it will retreive the last stored number.
+        Also don't refresh or click any other button while the transaction is being processed.
       </p>
+      <div id="spinner" class="hidden h-8 w-8 mb-5 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mt-4" role="status"></div>
       <button class="block mx-auto mb-5 rounded-full px-5 py-3 bg-green-500 text-white hover:opacity-80 transition font-bold shadow-lg shadow-green-400/30" id="connect-wallet">
         Connect Wallet
       </button>
@@ -62,7 +64,7 @@
       </div>
     </div>
     <hr class="border-gray-400 border-2 my-4">
-
+    
     <script type="module" src="/src/main.js"></script>
     <script>lucide.createIcons();</script>
   </body>
