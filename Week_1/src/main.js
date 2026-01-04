@@ -1,6 +1,6 @@
 import './style.css';
 import { ethers } from "ethers";
-import ContractArtifact from "../../out/SimpleStorage.sol/SimpleStorage.json";
+import ContractArtifact from "./SimpleStorage.json";
 
 const htmlTag = document.documentElement;
 const themeSwitchButton = document.getElementById('theme-switch');
