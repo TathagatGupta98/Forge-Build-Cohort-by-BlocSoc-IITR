@@ -7,9 +7,8 @@ contract Ledger {
 
     event NewDeposit(address user, uint256 amount);
 
-    function deposit() external payable {
+    function deposit(uint256 depositAmount) external  {
         address userAddress = msg.sender;
-        uint256 depositAmount = msg.value;
         balances[userAddress] += depositAmount;
         emit NewDeposit(userAddress, depositAmount);
     }
