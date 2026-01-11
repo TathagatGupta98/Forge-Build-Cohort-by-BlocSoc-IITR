@@ -10,6 +10,7 @@ const depositButton = document.getElementById('deposit-button');
 const withdrawButton = document.getElementById('withdraw-button');
 const inputAmount = document.getElementById('input-amount');
 const balanceDisplay = document.getElementById('balance-display');
+const spinner = document.getElementById('spinner');
 
 themeSwitchButton.addEventListener('click', () => {
     htmlTag.classList.toggle('dark');
@@ -72,12 +73,20 @@ depositButton.addEventListener('click', async () => {
         return;
     }
     try {
+        spinner.classList.remove('hidden');
+        depositButton.disabled = true;
+        withdrawButton.disabled = true;
         const tx = await contract.deposit({value: amountInWei});
         await tx.wait();
         alert("Deposit successful!");
         await updateBalanceDisplay();
+        spinner.classList.add('hidden');
+        depositButton.disabled = false;
+        withdrawButton.disabled = false;
 
     } catch (error) {
+        depositButton.disabled = false;
+        withdrawButton.disabled = false;
         console.error("Error during deposit:", error);
         alert("Deposit failed. See console for details.");
     }
@@ -89,12 +98,20 @@ withdrawButton.addEventListener('click', async () => {
         return;
     }
     try {
+        spinner.classList.remove('hidden');
+        depositButton.disabled = true;
+        withdrawButton.disabled = true;
         const tx = await contract.withdraw();
         await tx.wait();
         alert("Withdrawal successful!");
         await updateBalanceDisplay();
+        spinner.classList.add('hidden');
+        depositButton.disabled = false;
+        withdrawButton.disabled = false;
 
     } catch (error) {
+        depositButton.disabled = false;
+        withdrawButton.disabled = false;
         console.error("Error during withdrawal:", error);
         alert("Withdrawal failed. See console for details.");
     }
