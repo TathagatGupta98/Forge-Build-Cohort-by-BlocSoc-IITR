@@ -6,13 +6,13 @@ contract Ledger {
     mapping (address => uint256) private balances;
 
     event NewDeposit(address user, uint256 amount);
+    event Withdrawal(address user, uint256 amount);
 
-    function deposit(uint256 depositAmount) public payable{
-
+    function deposit() public payable {
         address userAddress = msg.sender;
-
-        (bool success, ) = userAddress.call{value: depositAmount}("");
-        require(success, "Transfer failed.");
+        uint256 depositAmount = msg.value;
+        
+        require(depositAmount > 0, "Deposit amount must be greater than zero.");
 
         balances[userAddress] += depositAmount;
 
@@ -20,16 +20,20 @@ contract Ledger {
     }
 
     function withdraw() public {
-        
         address userAddress = msg.sender;
-        require(balances[userAddress] > 0, "Insufficient balance to withdraw.");
+        uint256 amountToWithdraw = balances[userAddress];
 
-        (bool success, ) = userAddress.call{value: balances[userAddress]}("");
+        require(amountToWithdraw > 0, "Insufficient balance to withdraw.");
+
+        balances[userAddress] = 0; 
+
+        (bool success, ) = userAddress.call{value: amountToWithdraw}("");
         require(success, "Transfer failed.");
+        
+        emit Withdrawal(userAddress, amountToWithdraw);
     }
 
     function getBalance() external view returns (uint256) {
-        address user = msg.sender;
-        return balances[user];
+        return balances[msg.sender];
     }
 }

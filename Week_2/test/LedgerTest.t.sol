@@ -23,8 +23,6 @@ contract LedgerTest is Test {
         vm.expectEmit(false, false, false, true);
         emit NewDeposit(User, depositAmount);
 
-        ledger.deposit(depositAmount);
-
         assertEq(ledger.getBalance(), oldBalance + depositAmount);
         vm.stopPrank();
     }

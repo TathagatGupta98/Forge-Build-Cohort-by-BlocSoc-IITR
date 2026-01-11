@@ -24,7 +24,7 @@
 
       <div class="bg-blue-50 dark:bg-slate-700 border border-blue-200 dark:border-slate-600 rounded-md p-4 mb-6 text-center">
         <p class="text-sm text-gray-500 dark:text-gray-300 uppercase font-semibold">Current Balance</p>
-        <p id="balance-display" class="text-4xl font-bold text-blue-600 dark:text-blue-400 mt-1">$0.00</p>
+        <p id="balance-display" class="text-4xl font-bold text-blue-600 dark:text-blue-400 mt-1">0.00 ETH</p>
       </div>
 
       <div class="flex flex-col gap-4">
@@ -33,13 +33,16 @@
           <input 
             id="input-amount"
             type="number" 
-            placeholder="Enter amount..." 
+            placeholder="Enter amount in ETH" 
             class="w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-gray-900 dark:text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
           >
         </div>
 
         <button id="deposit-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition dark:bg-blue-500 dark:hover:bg-blue-600">
           Deposit Funds
+        </button>
+        <button id="withdraw-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition dark:bg-blue-500 dark:hover:bg-blue-600">
+          Withdraw Funds
         </button>
       </div>
 
