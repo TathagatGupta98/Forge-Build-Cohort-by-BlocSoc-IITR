@@ -66,6 +66,10 @@ storeButton.addEventListener('click', async () => {
         alert("Please enter a non-negative number.");
         return;
     }
+    if(numberToStore.isInteger() === false) {
+        alert("Please enter an integer.");
+        return;
+    }
     try{
         spinner.classList.remove('hidden');
         const store = await contract.set(numberToStore);
