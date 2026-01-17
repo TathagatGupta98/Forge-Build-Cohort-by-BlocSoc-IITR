@@ -12,6 +12,7 @@ const Spinner = () => (
   </svg>
 );
 
+
 export default function Home() {
   const { address, isConnected } = useAccount();
   const { connectors, connect } = useConnect();
