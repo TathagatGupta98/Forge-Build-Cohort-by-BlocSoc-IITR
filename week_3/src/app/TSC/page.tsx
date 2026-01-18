@@ -59,7 +59,6 @@ export default function MUSDPage() {
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
       
-      {/* Back Button */}
       <Link href="/" className="absolute top-6 left-6 text-slate-400 hover:text-slate-800 font-bold text-sm transition">
         ← Back to Home
       </Link>
@@ -86,7 +85,7 @@ export default function MUSDPage() {
               <span className="font-mono text-slate-600">{address?.slice(0, 6)}...{address?.slice(-4)}</span>
               <button onClick={() => disconnect()} className="text-red-500 font-semibold hover:underline">Disconnect</button>
             </div>
-
+            
             <div className="grid grid-cols-2 gap-1 rounded-xl bg-slate-100 p-1">
               <button onClick={() => { setMode("mint"); setInputValue(""); }} className={`rounded-lg py-2.5 text-sm font-bold transition-all ${mode === "mint" ? "bg-white text-indigo-600 shadow-sm" : "text-slate-400"}`}>Deposit ETH</button>
               <button onClick={() => { setMode("burn"); setInputValue(""); }} className={`rounded-lg py-2.5 text-sm font-bold transition-all ${mode === "burn" ? "bg-white text-orange-600 shadow-sm" : "text-slate-400"}`}>Redeem MUSD</button>
