@@ -10,8 +10,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6">
-      
-      {/* Wallet Connect (Top Right) */}
+
       <div className="absolute top-6 right-6">
         {!isConnected ? (
           <button 
@@ -30,7 +29,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Main Content */}
       <div className="flex flex-col items-center justify-center h-[80vh] text-center space-y-8">
         <h1 className="text-5xl font-extrabold text-slate-900 tracking-tight">
           The Future of <span className="text-indigo-600">Stablecoins</span>
@@ -38,7 +36,7 @@ export default function Home() {
         <p className="max-w-md text-slate-500 text-lg">
           Mint algorithmic stablecoins, provide liquidity, and swap assets on the Sepolia Testnet.
         </p>
-        {/* The 3 Main Buttons */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-10">
           
           <Link href="/TSC" className="group p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-indigo-500 hover:-translate-y-1 transition duration-300">
